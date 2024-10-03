@@ -1,0 +1,7 @@
+<h1>Here are all of the cars we currently have in our collection 🚗🚙🚘🏎️</h1>
+
+<ul>
+  <% @cars.each do |car| %>
+    <li><%= car.brand %> <%= car.model %></li>
+  <% end %>
+</ul>
