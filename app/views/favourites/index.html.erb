@@ -1,0 +1,11 @@
+<h1>Here are all of the cars you've added to your Favourites collection 🤩</h1>
+
+<ul>
+  <% if @favourites.length > 0 %>
+    <% @favourites.each do |favourite| %>
+      <li><%= favourite.car.brand %> <%= favourite.car.model %></li>
+    <% end %>
+  <% else %>
+      <li>You don't have any favourites yet but I'm sure that'll change soon 😜</li>
+  <% end %>
+</ul>

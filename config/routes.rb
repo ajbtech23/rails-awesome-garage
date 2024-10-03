@@ -14,5 +14,8 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :reviews
+    resources :favourites
   end
+
+  resources :favourites
 end

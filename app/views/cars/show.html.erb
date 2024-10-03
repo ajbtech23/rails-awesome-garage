@@ -10,14 +10,15 @@
 
 <h2>Here are all of the review from past Users 😎</h2>
 
-<% if @car.reviews %>
-  <ul>
+<ul>
+  <% if @car.reviews.length > 0 %>
     <% @car.reviews.each do |review| %>
       <li><%= review.comment %></li>
     <% end %>
-  </ul>
-<% else %>
-<% end %>
+  <% else %>
+      <li>Be the first to leave a review!</li>
+  <% end %>
+</ul>
 
 <h2>Would you like to leave a review? You can do so below 😀</h2>
 
@@ -25,4 +26,10 @@
   <%= f.input :comment %>
   <%= f.number_field :rating %>
   <%= f.submit "Complete" %>
+<% end %>
+
+<h2>Would you like to add this car to your collection of favourites? You can do so below 😎</h2>
+
+<%= simple_form_for [ @car, @favourite ] do |f| %>
+  <%= f.submit "Yes! This is my favourite car ever 😍" %>
 <% end %>
