@@ -7,3 +7,22 @@
   <li>⛽️ Fuel: <%= @car.fuel %></li>
   <li>💁‍♂️🙋‍♀️ Car Owner: <%= @car.owner.nickname %></li>
 </ul>
+
+<h2>Here are all of the review from past Users 😎</h2>
+
+<% if @car.reviews %>
+  <ul>
+    <% @car.reviews.each do |review| %>
+      <li><%= review.comment %></li>
+    <% end %>
+  </ul>
+<% else %>
+<% end %>
+
+<h2>Would you like to leave a review? You can do so below 😀</h2>
+
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.number_field :rating %>
+  <%= f.submit "Complete" %>
+<% end %>
