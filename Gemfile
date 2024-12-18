@@ -61,5 +61,5 @@ group :test do
 end
 
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+gem "font-awesome-sass", "~> 6.7"
 gem "sassc-rails"
